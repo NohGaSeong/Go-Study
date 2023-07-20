@@ -56,3 +56,22 @@ func (r *EntityMemoryRepository) Init() {
 		},
 	}
 }
+
+func (r *EntityMemoryRepository) Add(entity *Entity) error {
+	r.mutex.Lock()
+	defer r.mutex.Unlock()
+
+	if entity.ID == ""{
+		entity.ID = fmt.Sprintf("%d", len(r.entities) + 1)
+	}
+
+	for _, e := range r.entities {
+		if e.ID == entity.ID{
+			return ErrEntityAlreadyExists
+		}
+	}
+
+	r.entities = append(r.entities, entity)
+
+	return nil
+}

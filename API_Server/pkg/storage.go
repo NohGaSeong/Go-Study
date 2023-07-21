@@ -75,3 +75,20 @@ func (r *EntityMemoryRepository) Add(entity *Entity) error {
 
 	return nil
 }
+
+func (r *EntityMemoryRepository) Update(entity *Entity) error {
+	r.mutex.Lock()
+	defer r.mutex.Unlock()
+
+	if entity.ID == "" {
+		return ErrEntityIDNotProvided
+	}
+
+	for i, e := range r.entities {
+		if e.ID == entity.ID {
+			r.entities[i] = entity
+			return nil
+		}
+	}
+	return nil
+}

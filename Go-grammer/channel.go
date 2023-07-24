@@ -1,6 +1,6 @@
 // channels는 동시에 실행되고 있는 고루틴을 연결해주는 파이프임.
 
-package main
+// package main
 
 import "fmt"
 

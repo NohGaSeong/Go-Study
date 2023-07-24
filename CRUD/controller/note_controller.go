@@ -89,3 +89,14 @@ func (controller *NoteController) FIndById(ctx *fiber.Ctx) error {
 	}
 	return ctx.Status(fiber.StatusCreated).JSON(webResponse)
 }
+
+func (controller *NoteController) FindAll(ctx *fiber.Ctx) error {
+	noteResponse := controller.noteService.FindAll()
+	webResponse := response.Response{
+		Code:    200,
+		Status:  "OK",
+		Message: "success",
+		Data:    noteResponse,
+	}
+	return ctx.Status(fiber.StatusCreated).JSON(webResponse)
+}

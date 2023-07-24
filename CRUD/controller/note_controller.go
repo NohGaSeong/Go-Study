@@ -73,3 +73,19 @@ func (controller *NoteController) Delete(ctx *fiber.Ctx) error {
 
 	return ctx.Status(fiber.StatusCreated).JSON(webResponse)
 }
+
+func (controller *NoteController) FIndById(ctx *fiber.Ctx) error {
+	noteId := ctx.Params("noteId")
+	id, err := strconv.Atoi(noteId)
+	helper.ErrorPanic(err)
+
+	noteResponse := controller.noteService.FindById(id)
+
+	webResponse := response.Response{
+		Code:    200,
+		Status:  "OK",
+		Message: "success",
+		Data:    noteResponse,
+	}
+	return ctx.Status(fiber.StatusCreated).JSON(webResponse)
+}

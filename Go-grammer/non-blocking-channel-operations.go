@@ -1,7 +1,7 @@
 // 채널의 송수신은 기본적으로 동기적임. 그러나 select를 default문과 함께 사용하면 비동기 송수신을 구현할 수 있음.
 // 비동기 다중 select도 구현 가능.
 
-package main
+// package main
 
 import "fmt"
 

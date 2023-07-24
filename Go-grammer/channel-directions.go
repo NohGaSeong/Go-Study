@@ -1,5 +1,5 @@
 // 채널을 함수의 인자로 사용할 때, 채널이 수신용인지 송신용인지를 정할 수 있습니다.
-package main
+//package main
 
 import "fmt"
 

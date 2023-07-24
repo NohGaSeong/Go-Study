@@ -1,7 +1,7 @@
 // Go에선 명시적으로 별도의 반환값을 통해 에러를 전달하는게 일반적이고 관요엊ㄱ.
 // 흔히 사용하는 try cache(except) 같은 느낌이 아니다.
 
-package main
+// package main
 
 import (
 	"errors"

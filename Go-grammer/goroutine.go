@@ -1,6 +1,6 @@
 // goroutine은 경량의 실행 스레이드이다.
 
-package main
+// package main
 
 import "fmt"
 

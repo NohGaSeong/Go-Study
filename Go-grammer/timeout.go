@@ -1,6 +1,6 @@
 // TimeOut은 외부 리소스를 연결하거나 실행 시간을 제한해야하는 프로그램에서 중요함.
 
-package main
+// package main
 
 import (
 	"time"
